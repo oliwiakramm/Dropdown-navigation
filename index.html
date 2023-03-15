@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <img src="images/logo.svg" alt="snap" />
+      <div class="nav__container">
+        <button class="navBtn" aria-controls="Navigation" aria-expanded="false">
+          <img src="images/icon-menu.svg" alt="" aria-hidden="true" />
+        </button>
+        <div class="menu">
+          <nav class="nav">
+            <ul class="nav__list">
+              <li class="nav__item dropdown">
+                <button class="dropdownBtn" aria-expanded="false">
+                  <span class="btn__txt">Features</span>
+                  <img src="images/icon-arrow-down.svg" alt="" class="arrow" />
+                </button>
+                <ul class="nav__dropdown">
+                  <li class="dropdown__item">
+                    <a href="#" class="dropdown__link">
+                      <img
+                        src="images/icon-todo.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span class="dropdown__txt">Todo List</span>
+                    </a>
+                  </li>
+
+                  <li class="dropdown__item">
+                    <a href="#" class="dropdown__link">
+                      <img
+                        src="images/icon-calendar.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span class="dropdown__txt">Calendar</span>
+                    </a>
+                  </li>
+
+                  <li class="dropdown__item">
+                    <a href="#" class="dropdown__link">
+                      <img
+                        src="images/icon-reminders.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span class="dropdown__txt">Reminders</span>
+                    </a>
+                  </li>
+
+                  <li class="dropdown__item">
+                    <a href="#" class="dropdown__link">
+                      <img
+                        src="images/icon-planning.svg"
+                        alt=""
+                        aria-hidden="true"
+                      />
+                      <span class="dropdown__txt">Planning</span>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav__item dropdown">
+                <button class="dropdownBtn" aria-expanded="false">
+                  <span class="btn__txt">Company</span>
+                  <img src="images/icon-arrow-down.svg" alt="" class="arrow" />
+                </button>
+                <ul class="nav__dropdown company">
+                  <li class="dropdown__item">
+                    <a href="#" class="dropdown__link">History</a>
+                  </li>
+
+                  <li class="dropdown__item">
+                    <a href="#" class="dropdown__link">Our Team </a>
+                  </li>
+
+                  <li class="dropdown__item">
+                    <a href="#" class="dropdown__link">Blog</a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="nav__item">
+                <a href="#" class="nav__link">Careers</a>
+              </li>
+
+              <li class="nav__item">
+                <a href="#" class="nav__link">About</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="registration__container">
+            <a href="#" class="login">Login</a>
+            <a href="#" class="register">Register</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="main">
+      <div class="hero">
+        <div class="txt__container">
+          <h1 class="primary__heading">Make remote work</h1>
+          <p class="hero__info">
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <a href="#" class="more">Learn more</a>
+          <div class="clients">
+            <h2 class="visually-hidden">Clients we have worked with</h2>
+            <img src="images/client-databiz.svg" alt="databiz" class="data" />
+            <img
+              src="images/client-audiophile.svg"
+              alt="audiophile"
+              class="audio"
+            />
+            <img src="images/client-meet.svg" alt="meet" />
+            <img src="images/client-maker.svg" alt="marker" />
+          </div>
+        </div>
+        <picture>
+          <source
+            srcset="images/image-hero-mobile.png"
+            media="(max-width:1170px)"
+          />
+          <img
+            src="images/image-hero-desktop.png"
+            alt=""
+            aria-hidden="true"
+            class="hero__img"
+          />
+        </picture>
+      </div>
+    </div>
+
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://www.frontendmentor.io/profile/oliwiakramm">Hoshiko</a>.
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
