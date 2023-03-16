@@ -165,19 +165,17 @@ body {
   min-height: 100vh;
   background-color: var(--bg-clr);
   position: relative;
-  overflow-x: hidden;
 }
 
 body.menu__open {
   pointer-events: none;
+  overflow: hidden;
 }
 
 body.menu__open .header::before {
-  display: block;
-}
-
-body.menu__open .menu {
-  transform: translateX(0);
+  opacity: 1;
+  z-index: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .header {
@@ -195,11 +193,14 @@ body.menu__open .menu {
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
-  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: -1;
 }
 
 .nav__container {
   pointer-events: visible;
+  max-height: 33px;
 }
 
 .navBtn {
@@ -209,6 +210,7 @@ body.menu__open .menu {
   position: relative;
   z-index: 1;
   height: 33px;
+  cursor: pointer;
 }
 
 .menu {
@@ -223,7 +225,12 @@ body.menu__open .menu {
   flex-direction: column;
   gap: 2.4em;
   transform: translateX(100%);
+}
+
+/* GETTING RID OF FLICKERING MENU */
+.menu.active {
   transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
 }
 
 .nav__list {
@@ -240,6 +247,7 @@ body.menu__open .menu {
   visibility: visible;
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.2s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .dropdown.dropdown__open .arrow {
@@ -286,7 +294,8 @@ body.menu__open .menu {
   flex-direction: column;
   gap: 1.4rem;
   transform: translateY(-30%);
-  transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+  transition: opacity 0.3s ease-in-out, transform 0.4s ease-in-out,
+    visibility 0s 0.4s;
 }
 
 .nav__dropdown.company {
@@ -388,6 +397,7 @@ body.menu__open .menu {
   font-weight: 500;
   border: 1px solid var(--primary-clr);
   transition: all 0.25s ease-in;
+  cursor: pointer;
 }
 
 .more:hover,
@@ -455,12 +465,17 @@ footer {
     gap: 3.8rem;
   }
 
+  .header::before {
+    display: none;
+  }
+
   .navBtn {
     display: none;
   }
 
   .nav__container {
     flex: 1;
+    max-height: none;
   }
 
   .menu {
