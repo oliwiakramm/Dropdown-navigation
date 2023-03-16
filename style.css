@@ -176,6 +176,7 @@ body.menu__open .header::before {
   opacity: 1;
   z-index: 0;
   transition: opacity 0.3s ease-in-out;
+  visibility: visible;
 }
 
 .header {
@@ -194,8 +195,8 @@ body.menu__open .header::before {
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
   opacity: 0;
-  transition: opacity 0.3s ease-in-out;
-  z-index: -1;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 .nav__container {
